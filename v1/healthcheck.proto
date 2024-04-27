@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+package protoemaura.v1;
+
+option go_package = "github.com/kahoakiyoshi/EMAura-server/gen/protoemaura/v1;v1";
+
+message HealthCheckResponse {
+  string status = 1;
+}
+
+service HealthCheckService {
+  rpc HealthCheck(google.protobuf.Empty) returns (HealthCheckResponse);
+}
